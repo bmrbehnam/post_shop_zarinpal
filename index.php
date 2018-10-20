@@ -30,7 +30,7 @@ function ps_load_zarinpal_payment() {
 		include_once plugin_dir_path( __FILE__ ) . '/ps_zarinpal.php';
 	}
 
-	if ( class_exists( 'ps_payment_gateway' ) && ! class_exists( 'ps_zarinpal' ) ) {
+	if ( class_exists( 'ps_payment_gateway' ) && ! class_exists('ps_sms_newsms') ) {
 		add_filter( 'ps_payment_list', 'ps_add_zarinpal_payment' );
 		add_action( 'ps_load_payment_class', 'ps_load_zarinpal_class' );
 	}
